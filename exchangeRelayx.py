@@ -69,6 +69,7 @@ def startServers(targetURL, hashOutputFile = None, serverIP = "127.0.0.1", serve
 		c.setInterfaceIp("0.0.0.0")
 		c.PoppedDB 		= PoppedDB 		# pass the poppedDB to the relay servers
 		c.PoppedDB_Lock = PoppedDB_Lock # pass the poppedDB to the relay servers
+		c.setSMB2Support(True)
 		s = server(c)
 		s.start()
 		serverThreads.append(s)
@@ -103,10 +104,3 @@ if __name__ == "__main__":
 
 	startServers(targetURL, outputFile, serverIP, serverPort)
 	pass
-
-
-
-
-
-
-
